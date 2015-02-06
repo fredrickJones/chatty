@@ -3,6 +3,12 @@
 </div>
 
 <h4>Latest Chats:</h4>
-<div class="jumbotron">
+<div class="jumbotron" ng-controller="MessageCtrl">
+	<form class="form-group" ng-submit="addMessage()">
 
+		<input id="message-submit" class="form-control text-box" type="text" ng-model="newMessage" placeholder="Message">
+	</form>
+	<div ng-repeat="chatter in message">
+		{{chatter.message}} {{chatter.createdAt}}
+	</div>
 </div>
